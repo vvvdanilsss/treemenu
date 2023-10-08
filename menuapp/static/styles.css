@@ -1,0 +1,37 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    display: block;
+}
+
+a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+ul ul {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    margin-left: 16px;
+}
+
+ul ul.show {
+    height: auto;
+}
+
+li:hover > ul {
+    height: auto;
+}
+

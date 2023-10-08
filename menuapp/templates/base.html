@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <nav class="menu">
+        {% load menu_tags %}
+        {% draw_menu 'main_menu' %}
+    </nav>
+    {% block content %}{% endblock %}
+    <script type="text/javascript" src="{% static 'scripts.js' %}"> </script>
+</body>
+</html>

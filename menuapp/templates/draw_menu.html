@@ -1,0 +1,15 @@
+{% for item in items %}
+    <li>
+        <a {% if item.children.all %}href="javascript:void(0)"{% else %}href="{{ item.url }}"{% endif %}
+           {% if item.name in active_items %}class="active"{% endif %}>
+            {{ item.name }}
+        </a>
+        {% if item.children.all %}
+            <ul {% if item.name not in expand_items %}style="display: none;"{% endif %}>
+                {% with items=item.children.all %}
+                    {% include "draw_menu.html" %}
+                {% endwith %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
